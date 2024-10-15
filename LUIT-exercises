@@ -7,3 +7,28 @@ if days <= 10 and used == 'n' or broken == 'y' :
     print('You can get a refund.')
 else:
     print('You cannot get a refund.')   
+
+
+
+
+
+
+#while/for loops
+counter = 1
+while counter < 13:
+    print(counter)
+    counter += 2
+print('Finished')
+
+
+
+#number guessing game
+#will repeat until answer is found
+
+secret_number = 32
+user_input = int(input('Try to guess the secret number from 0 to 50: '))
+
+while user_input != secret_number:
+    print('Wrong, my friend.')
+    user_input = int(input('Try to guess the secret number from 0 to 50: '))
+print('Perfecto! You have guessed the secret number!')
