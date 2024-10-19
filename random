@@ -1,0 +1,7 @@
+#random unique password generator
+
+import random
+
+instances = int(input('How many instances do you have?: '))
+group = input('What department are you in?: ')
+
