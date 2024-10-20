@@ -32,3 +32,48 @@ while user_input != secret_number:
     print('Wrong, my friend.')
     user_input = int(input('Try to guess the secret number from 0 to 50: '))
 print('Perfecto! You have guessed the secret number!')
+
+
+
+
+
+
+#python guessing game
+release_date = 1994
+user_input = int(input('Guess the year Python 1.0 was released?: '))
+
+while user_input <= release_date:
+    print('Not quite!')
+    user_input = int(input('Guess the year Python 1.0 was released?: '))
+    if user_input >= release_date:
+        print('It was earlier than that!')
+    elif user_input <= release_date:
+        print('It was later than that!')
+else:
+    print('Correct!')
+    
+
+
+
+
+
+while True:
+    user_input = int(input('When was Python 1.0 released?: '))
+    if user_input < 1994:
+        print('it was later than that!')
+    elif user_input > 1994:
+        print('it was earlier than that!')
+    else:
+        print('Correct!')
+        break
+
+#correct answer for comparison
+while True:
+    answer = int(input('When was Python 1.0 released? '))
+    if answer > 1994:
+        print('It was earlier than that!')
+    elif answer < 1994:
+        print('It was later than that!')
+    else:
+        print('Correct!')
+        break

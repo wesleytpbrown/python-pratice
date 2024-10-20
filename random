@@ -1,0 +1,24 @@
+#random unique password generator
+
+import random
+import string
+
+
+num_instances = int(input('How many instances do you have?: '))
+print(num_instances)
+group = input('What department are you in?: ')
+print(group)
+
+
+def unique_password():
+    #defining characters
+    characters = string.ascii_letters + string.digits
+
+    password = ''.join(random.choices(characters) for i in range())
+    return password
+
+print (unique_password)
+
+#string.ascii_letters
+#string.digits
+#random.choices()
