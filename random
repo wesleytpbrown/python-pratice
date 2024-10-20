@@ -1,7 +1,11 @@
 #random unique password generator
 
 import random
+import string
+
 
 instances = int(input('How many instances do you have?: '))
 group = input('What department are you in?: ')
+
+string.ascii_letters
 
