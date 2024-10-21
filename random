@@ -1,24 +1,38 @@
 #random unique password generator
 
+
+#generate random passwpords
 import random
 import string
 
 
-num_instances = int(input('How many instances do you have?: '))
-print(num_instances)
-group = input('What department are you in?: ')
-print(group)
+def generate_unique_password(num_instances):
+    passwords = []
 
 
-def unique_password():
-    #defining characters
-    characters = string.ascii_letters + string.digits
+    for _ in range(num_instances):
+        password = ''.join(random.choices(string.ascii_letters + string.digits, k=15))
+        passwords.append(password)
+    
+    return passwords
 
-    password = ''.join(random.choices(characters) for i in range())
-    return password
 
-print (unique_password)
+#user input
 
-#string.ascii_letters
-#string.digits
-#random.choices()
+def main():
+    num_instances = int(input('How many instances do you have?: '))
+    print(num_instances)
+    
+    group = input('What department are you in?: ')
+    print(group)
+
+#generate the password
+    passwords = generate_unique_password(num_instances)
+
+#output unique password
+    print(f'\nUnique passwords for {group} department:')
+    for i, password in enumerate(passwords, 1):
+        print(f'{i}. Password: {password}')
+
+if __name__ == '__main__':
+    main()
