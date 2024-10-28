@@ -33,14 +33,18 @@ for file in file_list:
 
 
 
-#teams = {'Carolina': 'Panthers',
-#          'Baltimore': 'Ravens',
-#            'Atlanta': 'Falccons',
-#            'Miami': 'Dolphins',
-#            'Denver': 'Broncos', 
-#            'New-York': 'Giants', 
-#            'Tennessee': 'Titans', 
-#            'Arizona': 'Cardinals'
-#         }
 
-#print(teams)
+
+
+teams = {'Carolina': 'Panthers',
+        'Baltimore': 'Ravens',
+        'Atlanta': 'Falccons',
+        'Miami': 'Dolphins',
+        'Denver': 'Broncos', 
+        'New-York': 'Giants', 
+        'Tennessee': 'Titans', 
+        'Arizona': 'Cardinals',
+        'Dallas': 'Cowboys'
+         }
+
+print(teams)
