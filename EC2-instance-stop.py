@@ -1,28 +1,22 @@
+
 import boto3
+#create the client
+ec2 = boto3.client('ec2',  region_name='us-east-1')
 
-ec2 = boto3.client('ec2')
-
-
-def stop_running_instances():
-    #describe all instances in running state
-    response = ec2.describe_instances(
-        Filters=[
-            {'Name':'instance-state-name', 'Values':['running']}
-        ]
+#define the function with the parameters to start instances
+def create_new_instances ():
+    instances = ec2.run_instances(
+        ImageId='ami-063d43db0594b521b',  
+        InstanceType='t2.micro',  
+        MinCount=3,
+        MaxCount=3,
+        KeyName='new-instance-key', 
+        SecurityGroupIds=['sg-03b9e4e3fec2e77a7'],  
+        SubnetId='subnet-02f8d8e5cfbbd3677'  
     )
 
+    for instance in instances['Instances']:
+        print(f"Instance created with the ID: {instance['InstanceId']}")
 
-    #extract instance ID's
-    running_instances = [instance['InstanceID']
-        for reservation in response['Reservstions']
-        for instance in reservation['Instances']]
-    
-    if running_instances:
-        print ('Stopping Instances: ', running_instances )
-        ec2.stop_instances(InstanceIDs=running_instances)
-        print ('Stop request sent.')
-    else:
-        print ('No running instances found.')
-
-#Run the function
-stop_running_instances()
+if __name__ == '__main__':
+    create_new_instances()
